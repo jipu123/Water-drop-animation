@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水滴动画效果</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        
+        #canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: linear-gradient(to bottom, #f0f8ff, #e6f3ff);
+        }
+        
+        /* 示例遮挡元素 */
+        .obstacle {
+            position: absolute;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        #obstacle1 {
+            top: 200px;
+            left: 100px;
+            width: 300px;
+            height: 60px;
+            border-radius: 30px;
+        }
+        
+        #obstacle2 {
+            top: 400px;
+            left: 300px;
+            width: 200px;
+            height: 80px;
+            border-radius: 10px;
+        }
+        
+        #obstacle3 {
+            top: 300px;
+            left: 600px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        
+        #obstacle4 {
+            top: 500px;
+            left: 50px;
+            width: 180px;
+            height: 40px;
+            border-radius: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 示例遮挡元素 -->
+    <div class="obstacle" id="obstacle1">椭圆遮挡</div>
+    <div class="obstacle" id="obstacle2">圆角矩形</div>
+    <div class="obstacle" id="obstacle3">圆形遮挡</div>
+    <div class="obstacle" id="obstacle4">平面遮挡</div>
+    
+    <canvas id="canvas"></canvas>
+    
+    <script src="./index.js"></script>
+    <script>        
+        // 启动水滴系统
+        window.addEventListener('DOMContentLoaded', () => {
+            new WaterDropSystem();
+        });
+    </script>
+</body>
+</html>
